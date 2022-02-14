@@ -1,0 +1,14 @@
+/* h1{color: burlywood;font-size: 34pt;}
+p{font-family: 'Courier New', Courier, monospace;} */
+
+/* .backgroundClass{
+    background-image: url("https://media.gettyimages.com/photos/camera-in-the-hands-of-a-white-woman-in-a-blue-dress-who-hid-in-the-picture-id1313805231?s=2048x2048");    
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position: 300px 100px; 
+    background-attachment: fixed;
+} */
+.fontClass {
+    word-spacing: 50px;
+    letter-spacing: 10px;
+}

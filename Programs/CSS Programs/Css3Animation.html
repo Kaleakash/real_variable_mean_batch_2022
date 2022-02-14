@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            border: 1px red solid;
+            width: 300px;
+            height: 200px;
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: blue;
+            position: relative;
+        }
+        #d3{
+            border-radius: 60%;
+        }
+        #d1:hover{
+            animation-name: myAnim;
+            animation-duration: 5s;
+        }
+        #d2:hover{
+            animation-name: myAnim1;
+            animation-duration: 10s;
+            animation-delay: 5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes myAnim {
+            from {background-color: chartreuse;}
+            to {background-color: darkmagenta;}
+        }
+        @keyframes myAnim1 {
+            0% {background-color: chartreuse;margin-left: 0px;border-radius: 30%;}
+            25% {background-color: darkmagenta;margin-left: 50px;border-radius: 60%;}
+            50% {background-color: darkorange;margin-left: 100px;border-radius: 90%;}
+            75% {background-color:yellow;margin-left: 150x;border-radius: 120%;}
+            100% {background-color: turquoise;margin-left: 0px;border-radius: 0%;}
+
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">This is first div tag</div>
+    <div id="d2">This is second div tag</div>
+    <div id="d3">This is third div tag</div>
+</body>
+</html>
