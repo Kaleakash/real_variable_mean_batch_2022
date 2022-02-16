@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function validate() {
+            //alert("Fun called..")
+            var user = document.getElementById("u1").value;
+            //var pass = document.getElementById("p1").value;
+            var pass = document.getElementsByName("pass")[0].value
+            if(user.length==0){
+                //alert("user Name is required")
+                //document.write("User Name is required")
+                document.getElementById("e1").innerHTML="User Name is required";
+                return false;
+            }else if(pass.length==0) {
+                alert("Password is required")
+                return false;
+            }else if(user==="Raj" && pass==="123"){
+                alert("Successfully login")
+                return true;
+            }else {
+                alert("Failure try once again")
+                return false;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h2>Login Page Validation Using JavaScript</h2>
+    <form action="home.html" onsubmit="return validate()">
+        <label>UserName</label>
+        <input type="text" name="user" id="u1"/>
+        <span id="e1" style="color:red;"></span>
+        <br/>
+        <label>Password</label>
+        <input type="password" name="pass" id="p1"/><br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <h2>Login Page using HTML5 Features</h2>
+    <form action="home.html">
+        <label>UserName</label>
+        <input type="text" name="user1" required minlength="2"/><br/>
+        <label>Password</label>
+        <input type="password" name="pass1" required minlength="4"/><br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </form>
+</body>
+</html>
