@@ -6,7 +6,7 @@
 //     document.write("<br/>Emp function dis1()")
 // }
 // };
-// document.write("Employee Details<br/>")
+// document.write("<br/>Employee Details<br/>")
 // document.write("<br/> Id is "+emp.id);
 // document.write("<br/> Name is "+emp.name.toUpperCase());
 // document.write("<br/> Age is "+emp.age);
@@ -43,4 +43,12 @@ product.displayProduct();
 product.changePrice(62000);
 product.displayProduct();
 
-
+// let emp = {name:"Raj Deep",info:function(){
+//             document.write("<br/>employee behaviour")
+//             document.write("<br/> Name is "+this.name);
+//     }
+// }
+// document.write("Name is "+emp.name)
+// emp.name="Raj Patil";
+// document.write("<br/>Name is after change "+emp.name)
+// emp.info();         // calling functionality 
