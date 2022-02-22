@@ -1,0 +1,20 @@
+let a:number=10;
+let fname:string ="Raj Deep";
+let res:boolean = true;
+//a="Ramesh";
+let b =20;
+let fname1="Ravi Kumar";
+let res1=true;
+let c:number;
+let fname2:string;
+let res2:boolean;
+c=200;
+fname2="Mahesh Kumar";
+res2 = true;
+let abc:any = "Abc";
+abc =100;
+abc = true; 
+console.log(fname);
+console.log(res);
+console.log(a);
+
