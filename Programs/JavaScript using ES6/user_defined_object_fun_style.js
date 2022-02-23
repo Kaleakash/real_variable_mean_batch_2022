@@ -28,7 +28,7 @@
 //         document.write("<br/> AGe is "+this.age);
 //     }
 // }
-// var emp1 = new Employee(100,"Ravi",21);
+// var emp1 = new Employee("Ravi",1,23);
 // var emp2 = new Employee(101,"Mahesh",24);
 // var emp3 = new Employee(102,"Lokesh",27);
 // emp1.disEmpInfo();
