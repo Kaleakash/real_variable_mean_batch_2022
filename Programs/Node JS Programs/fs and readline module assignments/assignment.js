@@ -9,7 +9,8 @@ function addEmployee() {
         nameValue = obj.question("Enter the name")
         salaryValue = obj.questionFloat("Enter the salary")
         let emp = {id:idValue,name:nameValue,salary:salaryValue}
-        let result = employees.find(e=>e.id==emp.id);
+    let result = employees.find(e=>e.id==emp.id);// if record present it retrieve that 
+        // reccord else retrieve undefined. 
         if(result==undefined){
                 employees.push(emp);
                 fs.writeFileSync("employees.json",JSON.stringify(employees))
@@ -24,6 +25,8 @@ function deleteEmployee() {
     let index = employees.findIndex(e=>e.id==idValue);
     if(index>=0){
             employees.splice(index,1);
+// 1st parameter index position 
+// 2nd number of record from that position. detete number of records. 
             fs.writeFileSync("employees.json",JSON.stringify(employees))
             console.log("Record deleted successfully...");
     }else {
