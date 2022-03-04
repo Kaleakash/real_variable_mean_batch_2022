@@ -1,5 +1,7 @@
 let http = require("http");
 let url = require("url");
+let fs = require("fs");
+let alert = require("alert");
 let indexPage = `
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +33,31 @@ let loginPage = `
     <h2>Login Page</h2>
     <form action="checkUser">
         <label>UserName</label>
-        <input type="text" name="user"/><br/>
+        <input type="email" name="email"/><br/>
+        <label>Password</label>
+        <input type="password" name="pass"/><br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+        <br/>
+        <a href="signUpPage">Sign Up</a>
+    </form>
+</body>
+</html>
+`
+let signUp=`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Account Create</h2>
+    <form action="signUp">
+        <label>UserName</label>
+        <input type="email" name="email"/><br/>
         <label>Password</label>
         <input type="password" name="pass"/><br/>
         <input type="submit" value="submit"/>
@@ -41,6 +67,7 @@ let loginPage = `
 </html>
 `
 let server = http.createServer((req,res)=>{
+    console.log("Hello");
     let urlRef = url.parse(req.url,true);
     res.setHeader("content-type","text/html");
     if(urlRef.pathname != "/favicon.ico"){
@@ -59,10 +86,29 @@ let server = http.createServer((req,res)=>{
            res.write(loginPage);
        }else if(urlRef.pathname == "/checkUser") {
             let login = urlRef.query;
-            if(login.user == "Raj" && login.pass == "123"){
-                res.write("Successfully Login")
+            let loginInfo = JSON.parse(fs.readFileSync("login.json"));
+            let result = loginInfo.find(l=>l.email==login.email && l.pass==login.pass);
+            if(result==undefined){
+                alert("InValid account")
+                res.write(loginPage);
             }else {
-                res.write("Failure try once again")
+                alert("Successfully Login")
+                res.write("<h2>Welcome to Home Page</h2>");
+            }
+       }else if(urlRef.path=="/signUpPage"){
+        res.write(signUp);      
+       }else if(urlRef.pathname=="/signUp"){
+            let login = urlRef.query;
+            let loginInfo = JSON.parse(fs.readFileSync("login.json"));
+            let result = loginInfo.find(l=>l.email==login.email);
+            if(result==undefined){
+                    loginInfo.push(login);
+                    fs.writeFileSync("login.json",JSON.stringify(loginInfo));
+                    alert("Accoun created");
+                    res.write(loginPage);
+            }else {
+                alert("Email Id must be unqiue");
+                res.write(loginPage);
             }
        }else {
         res.write(indexPage)
