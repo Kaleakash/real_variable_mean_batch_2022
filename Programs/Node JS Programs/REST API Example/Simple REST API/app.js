@@ -76,6 +76,30 @@ app.post("/storeProduct",(req,res)=> {
                 res.send("Product is must be unique");
         }
 })
+// http://localhost:9090/deleteProduct/1
+// http://localhost:9090/deleteProduct/100
+app.delete("/deleteProduct/:pid",(req,res)=> {
+    let pid = req.params.pid;
+    let index = products.findIndex(p=>p.pid==pid);
+    if(index<0){
+        res.send("Record not present")
+    }else {
+        products.splice(index,1);
+        res.send("Record deleted successfully");
+    }
+})
+// http://localhost:9090/updateProductPrice
+app.put("/updateProductPrice",(req,res)=> {
+    let product = req.body;
+    let index = products.findIndex(p=>p.pid==product.pid);
+    if(index<0){
+        res.send("Record not present")
+    }else {
+        products[index].price = product.price;
+        products[index].pname = product.pname;
+        res.send("Record updated successfully");
+    }
+})
 
 
 app.listen(9090,()=>console.log("Server running on port number 9090"))
