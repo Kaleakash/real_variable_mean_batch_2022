@@ -37,6 +37,16 @@ pass the technname you have to find employee details.
 app.get("/",(req:Request,res:Response)=> {
     res.send("Welcome to Express JS using Typescript");
 })
+// http://localhost:9090/searchByTech
+// app.get("/searchByTech/:tech",(req:Request,res:Response)=> {
+// let tech = req.params.tech;
+//         employees.forEach(e=>e.tech.forEach(t=>{
+//             if(t==tech){
+
+//             }
+//         })
+// })
+
 // http://localhost:9090/findEmployee/100
 // http://localhost:9090/findEmployee/1
 app.get("/findEmployee/:empId",(req:Request,res:Response)=> {
