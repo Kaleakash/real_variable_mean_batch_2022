@@ -13,8 +13,10 @@ app.use(express.json())
 mongoose.connect(url).then(res=>console.log("Connected")).catch(err=>console.log(err));
 
 // http://localhost:9090/api/product/
+// http://localhost:9090/api/product/findAllProduct
+// http://localhost:9090/api/product/storeProduct
+// http://localhost:9090/api/product/updateProduct
+// http://localhost:9090/api/product/deleteProduct
 app.use("/api/product",productRouter);
-
-
 
 app.listen(9090,()=>console.log("Server running on port number 9090"));

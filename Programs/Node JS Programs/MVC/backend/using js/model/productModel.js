@@ -1,5 +1,5 @@
 let mongoose = require("mongoose");
-mongoose.pluralize(null);
+mongoose.pluralize(null);   // to avoid plular 
 
 // provide the structure for the collection 
 let productSchema = mongoose.Schema({
@@ -7,7 +7,9 @@ let productSchema = mongoose.Schema({
     pname:String,
     price:Number
 })
-
+// we are creating model 
+//1st parameter is collection name
+// 2nd parameter is collection details. 
 let productModel = mongoose.model("Product",productSchema);
 
 
