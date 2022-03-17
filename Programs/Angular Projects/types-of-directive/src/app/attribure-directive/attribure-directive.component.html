@@ -1,0 +1,12 @@
+<div>
+    <h2>Attributte directive</h2>
+    <p style="color:red;text-decoration: line-through;">Welcome to Attribute directive using inline CSS</p>
+    <p [ngStyle]="{'color':'red','fontSize':'20px','text-decoration':'line-through'}">Welcome to Attribute directive using ngStyle</p>
+    <p [ngStyle]="styleInfo">Welcome to Attribute directive using ngStyle</p>
+    <p class="a1">Welcome to Attribute directive using css class selector</p>
+    <p [ngClass]=" 'a1' ">Welcome to Attribute directive using ngClass selector</p>
+    <p [ngClass]="{a1:false,a2:true}">Welcome to Attribute directive using ngClass selector</p>
+    <br/>
+    <input type="button" value="change" (click)="change()"/><br/>
+    <p [ngClass]="{a1:f1,a2:f2}">Welcome to Attribute directive using ngClass selector</p>
+</div>

@@ -1,0 +1,9 @@
+<div>
+    <h2>One way data binding using - event binding</h2>
+    <input type="button" value="click" (click)="fun1()"/>
+    <br/>
+    {{msg}}
+    <br/>
+    Name :<input type="text" #nameRef/>
+    <input type="button" value="pass value" (click)="passValue(nameRef)"/>
+</div>

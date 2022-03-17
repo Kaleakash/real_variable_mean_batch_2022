@@ -2,4 +2,8 @@
     <h2>One way data binding - using property binding</h2>
     <input type="text" [value]="lastname"/>
     <p [innerText]="lastname"></p>
+    <input type="button" value="click here"/>
+    <input type="button" value="click here" disabled/>
+    <input type="button" value="click here" disabled={{f1}}/>
+    <input type="button" value="click here" [disabled]="f2"/>
 </div>

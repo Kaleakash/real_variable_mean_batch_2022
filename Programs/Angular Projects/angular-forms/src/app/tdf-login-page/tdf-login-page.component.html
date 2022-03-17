@@ -1,0 +1,24 @@
+<div>
+    <h2>Login Page using Template Driven Form</h2>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+        <label>UserName</label>
+            <input type="text" name="user" ngModel required minlength="2"/>
+<div *ngIf="loginRef.controls['user'].invalid && (loginRef.controls['user'].dirty || loginRef.controls['user'].touched)">
+   <span [hidden]="!loginRef.controls['user'].errors?.['required']" style="color:red">UserName is required</span>
+   <span [hidden]="!loginRef.controls['user'].errors?.['minlength']" style="color:red">Min length must be 2 character</span>
+</div>    
+        <br/>
+        <label>Password</label>
+            <input type="password" name="pass" ngModel required minlength="3"/>
+            <div *ngIf="loginRef.controls['pass'].invalid && (loginRef.controls['pass'].dirty || loginRef.controls['pass'].touched)">
+                <span [hidden]="!loginRef.controls['pass'].errors?.['required']" style="color:red">Password is required</span>
+                <span [hidden]="!loginRef.controls['pass'].errors?.['minlength']" style="color:red">Min length must be 3 character</span>
+             </div>              
+        <br/>
+        <input type="submit" value="submit" [disabled]="!loginRef.valid"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+ 
+    {{msg}}
+</div>

@@ -1,0 +1,56 @@
+<div>
+    <h2>Structure directive</h2>
+    <div *ngIf="true">Welcome to Angular training</div>
+    <div *ngIf="false">Welcome to Angular training</div>
+    <div *ngIf="f1">Welcome to Angular training using variable</div>
+    <div *ngIf="f2">Welcome to Angular training using variable</div>
+    <input type="button" value="click here" (click)="fun()"/><br/>
+    <div *ngIf="f3">Welcome to Angular Training</div>
+    <br/>
+    <input type="button" [value]="b1" (click)="change()"/>
+    <div *ngIf="f4">
+            <h2>Welcome.....</h2>
+    </div>
+    <br/>
+    {{names}}
+    <br/>
+    <div *ngFor="let n of names">
+            <p>{{n}}</p>
+    </div>
+    <ol>
+        <li *ngFor="let n of names">{{n}}</li>
+    </ol>
+    <br/>
+    Employee id is {{emp.id}}, Name is {{emp.name}} and age is {{emp.age}}
+    <hr/>
+    <!--
+        <input type="number" #idRef/>
+        <input type="number" #nameRef/>
+        <input type="number" #salaryRef/>
+        <input type="button" value="Add" (click)=addData()/>
+    -->
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.age}}</td>
+        </tr>
+    </table>
+    <br/>
+    <ul>
+        <li *ngFor="let emp of employees">
+                <ul>
+                    <li>{{emp.id}}</li>
+                </ul>
+        </li>
+    </ul>
+</div>
+
+
+
+

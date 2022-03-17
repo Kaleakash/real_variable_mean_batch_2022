@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyBindingComponent implements OnInit {
   lastname:string="patil";
+  f1:boolean = true;
+  f2:boolean = false;
   constructor() { }
 
   ngOnInit(): void {
