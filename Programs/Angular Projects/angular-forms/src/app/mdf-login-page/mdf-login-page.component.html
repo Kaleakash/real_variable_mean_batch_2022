@@ -2,10 +2,21 @@
     <h2>Login Page using Reactive Form</h2>
     <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
         <label>UserName</label>
-        <input type="text" formControlName="user"/><br/>
+        <input type="text" formControlName="user"/>
+        <div *ngIf="loginRef.controls['user'].invalid && (loginRef.controls['user'].dirty || loginRef.controls['user'].touched)">
+            <span [hidden]="!loginRef.controls['user'].errors?.['required']" style="color:red">UserName is required</span>
+            <span [hidden]="!loginRef.controls['user'].errors?.['minlength']" style="color:red">Min length must be 3 character</span>
+         </div>   
+        <br/>
         <label>Password</label>
-        <input type="password" formControlName="pass"/><br/>
-        <input type="submit" value="submit"/>
+        <input type="password" formControlName="pass"/>
+        
+        <div *ngIf="loginRef.controls['pass'].invalid && (loginRef.controls['pass'].dirty || loginRef.controls['pass'].touched)">
+            <span [hidden]="!loginRef.controls['pass'].errors?.['required']" style="color:red">Password is required</span>
+            <span [hidden]="!loginRef.controls['pass'].errors?.['pattern']" style="color:red">Pattern must be match</span>
+         </div>   
+        <br/>
+        <input type="submit" value="submit" [disabled]="!loginRef.valid"/>
         <input type="reset" value="reset"/>
     </form>
     <br/>

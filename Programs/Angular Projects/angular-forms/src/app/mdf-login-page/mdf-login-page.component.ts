@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-mdf-login-page',
@@ -8,8 +8,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class MdfLoginPageComponent implements OnInit {
   loginRef = new FormGroup({
-    user:new FormControl(),
-    pass:new FormControl()
+    user:new FormControl("",[Validators.required,Validators.minLength(3)]),
+    pass:new FormControl("",[Validators.required,Validators.pattern("[a-z]+&[a-z]+")])
   })
   msg:string=""
   constructor() { }
