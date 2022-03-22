@@ -3,6 +3,7 @@
         <input type="button" value="load fake data" (click)="loadData()"/>
         <br/>
         <div *ngFor="let product of products">
-            <p>{{product.title}}</p>
+            <img src={{product.image}} width="200px" height="200px"/>
+            <span>{{product.title}}</span>
         </div>
 </div>

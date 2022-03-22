@@ -35,5 +35,6 @@ db.dbConnection; //  call db connection
 app.use(express_1.default.json()); // enable json data 
 // http://localhost:9090/api/product---> main path 
 // http://localhost:9090/api/product/findAllProduct ---> getAllProduct 
+//......
 app.use("/api/product", productRouter_1.default);
 app.listen(port, () => console.log(`Server running on port number ${port}`));

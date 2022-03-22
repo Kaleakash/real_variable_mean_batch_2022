@@ -10,7 +10,7 @@ app.use(express.json());        // enable json data
 
 // http://localhost:9090/api/product---> main path 
 // http://localhost:9090/api/product/findAllProduct ---> getAllProduct 
-
+//......
 app.use("/api/product",router);
 
 

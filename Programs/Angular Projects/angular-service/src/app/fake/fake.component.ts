@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Fake } from '../fake';
 import { FakeService } from '../fake.service';
+/*
+ <input type="button" value="load fake data" (click)="loadData()"/>
+        <br/>
+        <div *ngFor="let product of products">
+            <p>{{product.title}}</p>
+        </div>
 
+*/
 @Component({
   selector: 'app-fake',
   templateUrl: './fake.component.html',

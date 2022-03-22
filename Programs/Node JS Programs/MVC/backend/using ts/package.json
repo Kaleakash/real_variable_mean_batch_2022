@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "main":"node .",
+    "start": "tsc-watch --onSuccess \"node ./dist/app.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

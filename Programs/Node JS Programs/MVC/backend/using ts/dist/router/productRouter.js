@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 const controller = __importStar(require("../controller/productController"));
 const express_1 = __importDefault(require("express"));
 let router = express_1.default.Router();
-router.get("/findAllProductsss", controller.findAllProduct);
+router.get("/findAllProducta", controller.findAllProduct);
 router.post("/storeProductDetails", controller.storeProduct);
 router.delete("/deleteProductInfo/:_id", controller.deleteProduct);
 router.put("/updateProductDetails", controller.updateProduct);
