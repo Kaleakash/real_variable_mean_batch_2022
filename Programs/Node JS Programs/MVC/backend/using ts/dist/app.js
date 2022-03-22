@@ -29,12 +29,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const productRouter_1 = __importDefault(require("./router/productRouter"));
 const db = __importStar(require("./config/dbConfig"));
+const cors_1 = __importDefault(require("cors"));
 let app = (0, express_1.default)();
 let port = 9090;
 db.dbConnection; //  call db connection 
 app.use(express_1.default.json()); // enable json data 
+app.use((0, cors_1.default)()); // enable cors policy 
 // http://localhost:9090/api/product---> main path 
 // http://localhost:9090/api/product/findAllProduct ---> getAllProduct 
-//......
+//http://localhost:9090/api/product/storeProductDetails --> store product
 app.use("/api/product", productRouter_1.default);
 app.listen(port, () => console.log(`Server running on port number ${port}`));

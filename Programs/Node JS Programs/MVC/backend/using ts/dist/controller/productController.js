@@ -46,12 +46,14 @@ let findAllProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 exports.findAllProduct = findAllProduct;
 let storeProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let product = req.body;
-    let result = yield repository.storeProduct(product);
     try {
-        res.json(result);
+        let result = yield repository.storeProduct(product);
+        //res.json(result);
+        res.json({ "msg": "Record inserted successfully" });
     }
     catch (ex) {
-        res.json(ex);
+        //res.json(ex);
+        res.json({ "msg": "Record didn't inserted" });
     }
 });
 exports.storeProduct = storeProduct;

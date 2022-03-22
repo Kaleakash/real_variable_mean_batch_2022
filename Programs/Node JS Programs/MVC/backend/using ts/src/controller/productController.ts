@@ -11,11 +11,13 @@ export let findAllProduct = async (req:Request,res:Response)=> {
 }
 export let storeProduct = async (req:Request,res:Response)=> {
        let product:Product = req.body;
-       let result = await repository.storeProduct(product);  
        try{
-           res.json(result);
+         let result = await repository.storeProduct(product);  
+           //res.json(result);
+           res.json({"msg":"Record inserted successfully"});
         }catch(ex){
-           res.json(ex);
+           //res.json(ex);
+           res.json({"msg":"Record didn't inserted"});
         }
 }
 export let updateProduct = async (req:Request,res:Response)=> {

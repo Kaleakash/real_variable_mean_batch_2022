@@ -1,0 +1,15 @@
+<div>
+    <h2>Add Product</h2>
+    <form [formGroup]="productRef" (ngSubmit)="storeProduct()">
+        <label>PId</label>
+        <input type="text" formControlName="_id"/><br/>
+        <label>PName</label>
+        <input type="text" formControlName="pname"/><br/>
+        <label>Price</label>
+        <input type="text" formControlName="price"/><br/>
+        <input type="submit" value="Add Product"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+    {{storeMsg}}
+</div>
