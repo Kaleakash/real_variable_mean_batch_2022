@@ -1,15 +1,47 @@
-<div>
+<div class="container">
     <h2>Add Product</h2>
-    <form [formGroup]="productRef" (ngSubmit)="storeProduct()">
+    <form [formGroup]="productRef" (ngSubmit)="storeProduct()" class="form-group">
         <label>PId</label>
-        <input type="text" formControlName="_id"/><br/>
+        <input type="text" formControlName="_id" class="form-control"/><br/>
         <label>PName</label>
-        <input type="text" formControlName="pname"/><br/>
+        <input type="text" formControlName="pname" class="form-control"/><br/>
         <label>Price</label>
-        <input type="text" formControlName="price"/><br/>
-        <input type="submit" value="Add Product"/>
-        <input type="reset" value="reset"/>
+        <input type="text" formControlName="price" class="form-control"/><br/>
+        <input type="submit" value="Add Product" class="btn btn-success"/>
+        <input type="reset" value="reset" class="btn btn-info"/>
     </form>
     <br/>
     {{storeMsg}}
+    <hr/>
+    <table border="1" class="table table-striped">
+        <tr>
+            <th>PId</th>
+            <th>PName</th>
+            <th>Price</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <tr *ngFor="let product of products">
+                <td>{{product._id}}</td>
+                <td>{{product.pname | uppercase}}</td>
+                <td>{{product.price | currency : '&#8377;'}}</td>
+                <td><input type="button" value="delete" (click)="deleteProduct(product._id)" class="btn btn-primary"/></td>
+                <td><input type="button" value="update" (click)="updateProduct(product)" class="btn btn-secondary"/></td>
+        </tr>
+    </table>
+    {{deleteMsg}}
+    {{updateMsg}}
+    <br/>
+    <div *ngIf="flag">
+        <h2>Update Product</h2>
+        <form (ngSubmit)="updateProductFromDb()" class="form-group">
+            <label>PId</label>
+            <input type="text" name="_id" [(ngModel)]="_id" readonly class="form-control"/><br/>
+            <label>Price</label>
+            <input type="text" name="price" [(ngModel)]="price" class="form-control"/><br/>
+            <input type="submit" value="update product" class="btn btn-primary"/>
+            <input type="reset" value="reset" class="btn btn-secondary"/>
+        </form>
+    </div>
 </div>
+

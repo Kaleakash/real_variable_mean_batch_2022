@@ -36,7 +36,7 @@ db.dbConnection; //  call db connection
 app.use(express_1.default.json()); // enable json data 
 app.use((0, cors_1.default)()); // enable cors policy 
 // http://localhost:9090/api/product---> main path 
-// http://localhost:9090/api/product/findAllProduct ---> getAllProduct 
+// http://localhost:9090/api/product/findAllProducts ---> getAllProduct 
 //http://localhost:9090/api/product/storeProductDetails --> store product
 app.use("/api/product", productRouter_1.default);
 app.listen(port, () => console.log(`Server running on port number ${port}`));
