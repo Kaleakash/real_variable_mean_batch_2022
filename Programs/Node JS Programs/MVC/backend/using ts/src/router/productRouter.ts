@@ -1,11 +1,11 @@
 import * as controller from '../controller/productController';
 import express from 'express';
-let router = express.Router();
+let productrouter = express.Router();
 
-router.get("/findAllProducts",controller.findAllProduct);
-router.post("/storeProductDetails",controller.storeProduct);
-router.delete("/deleteProductInfo/:_id",controller.deleteProduct);
-router.put("/updateProductDetails",controller.updateProduct);
+productrouter.get("/findAllProducts",controller.findAllProduct);
+productrouter.post("/storeProductDetails",controller.storeProduct);
+productrouter.delete("/deleteProductInfo/:_id",controller.deleteProduct);
+productrouter.put("/updateProductDetails",controller.updateProduct);
 
-export=router;
+export=productrouter;
 

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-mongoose.pluralize(null);
+mongoose.pluralize(null);   // don't create lower case and don't add post fix s 
 
 let productSchema = new mongoose.Schema({
     _id:{type:Number,required:true},

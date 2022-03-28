@@ -33,8 +33,8 @@ const cors_1 = __importDefault(require("cors"));
 let app = (0, express_1.default)();
 let port = 9090;
 db.dbConnection; //  call db connection 
-app.use(express_1.default.json()); // enable json data 
-app.use((0, cors_1.default)()); // enable cors policy 
+app.use(express_1.default.json()); // enable json data post and put method 
+app.use((0, cors_1.default)()); // enable cors policy to enable from angular 
 // http://localhost:9090/api/product---> main path 
 // http://localhost:9090/api/product/findAllProducts ---> getAllProduct 
 //http://localhost:9090/api/product/storeProductDetails --> store product
