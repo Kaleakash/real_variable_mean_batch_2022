@@ -1,6 +1,7 @@
 import * as repository from '../repository/productRepository'
 import { Request,Response } from "express";
 import { Product } from '../model/product';
+
 export let findAllProduct = async (req:Request,res:Response)=> {
             let result = await repository.findAllProduct();  
             try{
